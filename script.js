@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     const hero2 = document.querySelector('.hero2');
