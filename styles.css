@@ -142,6 +142,59 @@ body {
     line-height: 1.6;
 }
 
+.footer {
+    background-color: #1a1a1d;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #00adb5;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.social-links a {
+    color: #00adb5;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.footer a {
+    color: #00adb5;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3em;
