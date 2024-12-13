@@ -32,18 +32,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     const hero2 = document.querySelector('.hero2');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
+    const handleHero2Visibility = () => {
+        if (window.innerWidth < 700) {
+            hero2.style.display = 'none';
+        } else {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        hero2.style.display = 'none';
+                    } else {
+                        hero2.style.display = 'block';
+                    }
+                });
+            });
+            observer.observe(hero);
+        }
+    };
 
-                hero2.style.display = 'none';
-            } else {
-
-                hero2.style.display = 'block';
-            }
-        });
-    });
-
-    observer.observe(hero);
+    handleHero2Visibility();
+    window.addEventListener('resize', handleHero2Visibility);
 });
+
 
