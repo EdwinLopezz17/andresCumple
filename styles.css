@@ -142,6 +142,76 @@ body {
     line-height: 1.6;
 }
 
+.card-icons {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+}
+
+.card:hover .card-icons {
+    display: flex;
+}
+
+.card-icon {
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-icon:hover {
+    background-color: rgba(0,173,181,0.8);
+}
+
+
+.edit-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.edit-phrase {
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #00adb5;
+    background-color: #1a1a1d;
+    color: #fff;
+    font-size: 1em;
+    resize: none;
+    
+}
+
+.edit-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.edit-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #393e46;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.edit-actions button:hover {
+    background-color: #00adb5;
+}
+
+
 .footer {
     background-color: #1a1a1d;
     color: #fff;
