@@ -1,18 +1,32 @@
+:root {
+    --primary-color: #00adb5;
+    --secondary-color: #393e46;
+    --background-dark: #1a1a1d;
+    --background-medium: #303841;
+    --text-color: #fff;
+}
 
-body {
-    font-family: 'Roboto', sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, #1a1a1d, #303841);
-    color: #fff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, var(--background-dark), var(--background-medium));
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
-.hero {
+/* Hero Sections */
+.hero, .hero2 {
     text-align: center;
-    background: linear-gradient(135deg, #00adb5, #393e46);
-    color: #fff;
+    color: var(--text-color);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 100px 20px;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     position: relative;
@@ -33,9 +47,7 @@ body {
 
 .hero2 {
     display: none;
-    text-align: center;
     background: linear-gradient(to right, #1e3d59, #1c5779);
-    color: #fff;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -44,9 +56,9 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
     transition: all 1s ease-in-out;
-    
 }
-.hero2-content{
+
+.hero2-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,23 +71,24 @@ body {
     font-weight: bold;
 }
 
-.profile-photo-small {
+/* Profile Photos */
+.profile-photo-small, .profile-photo {
     border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-photo-small {
     width: 70px;
     height: 70px;
-    object-fit: cover;
-    border: 4px solid #ffffff;
+    border: 4px solid var(--text-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-left: 20px;
 }
 
-
 .profile-photo {
-    border-radius: 50%;
     width: 200px;
     height: 200px;
-    object-fit: cover;
-    border: 8px solid #00adb5;
+    border: 8px solid var(--primary-color);
     box-shadow: 0 6px 15px rgba(0, 173, 181, 0.5);
     transition: transform 0.4s;
 }
@@ -84,10 +97,11 @@ body {
     transform: scale(1.1);
 }
 
+/* Friends Section */
 .friends {
     padding: 60px 20px;
     text-align: center;
-    background-color: #1a1a1d;
+    background-color: var(--background-dark);
     border-radius: 15px;
     margin: 40px auto;
     max-width: 1200px;
@@ -97,10 +111,11 @@ body {
 .friends h3 {
     font-size: 3em;
     margin-bottom: 40px;
-    color: #00adb5;
+    color: var(--primary-color);
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Card Styles */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -109,13 +124,16 @@ body {
 }
 
 .card {
-    background: #303841;
+    background: var(--background-medium);
     border-radius: 15px;
     overflow: hidden;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     max-width: 350px;
+    position: relative;
 }
 
 .card:hover {
@@ -132,13 +150,13 @@ body {
 .card h4 {
     font-size: 1.8em;
     margin: 15px 0;
-    color: #00adb5;
+    color: var(--primary-color);
 }
 
 .card p {
     font-size: 1em;
     margin: 0 15px 20px;
-    color: #fff;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -156,7 +174,7 @@ body {
 
 .card-icon {
     background-color: rgba(0,0,0,0.7);
-    color: #fff;
+    color: var(--text-color);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -171,7 +189,7 @@ body {
     background-color: rgba(0,173,181,0.8);
 }
 
-
+/* Edit Section */
 .edit-container {
     padding: 20px;
     border-radius: 10px;
@@ -182,12 +200,11 @@ body {
     width: 90%;
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #00adb5;
-    background-color: #1a1a1d;
-    color: #fff;
+    border: 1px solid var(--primary-color);
+    background-color: var(--background-dark);
+    color: var(--text-color);
     font-size: 1em;
     resize: none;
-    
 }
 
 .edit-actions {
@@ -195,34 +212,33 @@ body {
     display: flex;
     gap: 10px;
     justify-content: center;
-    
 }
 
 .edit-actions button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #393e46;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .edit-actions button:hover {
-    background-color: #00adb5;
+    background-color: var(--primary-color);
 }
 
-
+/* Footer */
 .footer {
-    background-color: #1a1a1d;
-    color: #fff;
+    background-color: var(--background-dark);
+    color: var(--text-color);
     padding: 40px 20px;
     text-align: center;
-    border-top: 2px solid #00adb5;
+    border-top: 2px solid var(--primary-color);
     position: relative;
     bottom: 0;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .footer-content {
@@ -233,7 +249,7 @@ body {
 .footer p {
     font-size: 1.2em;
     margin: 10px 0;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .social-links {
@@ -242,7 +258,7 @@ body {
     margin: 20px 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que los íconos se acomoden si hay poco espacio */
+    flex-wrap: wrap;
 }
 
 .social-links li {
@@ -250,66 +266,35 @@ body {
 }
 
 .social-links a {
-    color: #00adb5;
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 1.3em;
+    transition: text-decoration 0.3s ease;
 }
 
-.social-links a:hover {
-    text-decoration: underline;
-}
-
-.footer a {
-    color: #00adb5;
-    text-decoration: none;
-}
-
+.social-links a:hover,
 .footer a:hover {
     text-decoration: underline;
 }
 
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-
-    .hero h1 {
-        font-size: 3em;
-    }
-
-    .hero h2 {
-        font-size: 2em;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer p {
-        font-size: 1em;
-    }
-
-    .social-links {
-        margin-top: 10px;
-    }
-
-    .social-links li {
-        margin: 10px 5px; 
-    }
-
-    .social-links a {
-        font-size: 1.1em; 
-    }
+    .hero h1 { font-size: 3em; }
+    .hero h2 { font-size: 2em; }
+    .cards { grid-template-columns: 1fr; }
+    .footer p { font-size: 1em; }
+    .social-links { margin-top: 10px; }
+    .social-links li { margin: 10px 5px; }
+    .social-links a { font-size: 1.1em; }
 }
 
 @media (max-width: 480px) {
-    .footer p {
-        font-size: 0.9em;
-    }
-
-    .social-links li {
-        margin: 8px 3px;
-    }
-
-    .social-links a {
-        font-size: 1em; 
-    }
+    .footer p { font-size: 0.9em; }
+    .social-links li { margin: 8px 3px; }
+    .social-links a { font-size: 1em; }
 }
-
